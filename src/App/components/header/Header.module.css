@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.headerContainer{
+    position: sticky;
+    z-index: 20000000000;
+    top: 0px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    max-width: 100vw;
+    height: 60px;
+    --shadow-color: 0deg 0% 63%;
+    box-shadow: 
+    0.8px 0.7px 0.8px hsl(var(--shadow-color) / 0.72),
+    1.4px 1.3px 1.4px -1.7px hsl(var(--shadow-color) / 0.54),
+    5.4px 4.9px 5.5px -3.3px hsl(var(--shadow-color) / 0.36),
+    16.3px 14.9px 16.6px -5px hsl(var(--shadow-color) / 0.18);
+}
+.kiteImg{
+    height: 65%;
+    margin-top: 9px;
+    margin-left: 25px;
+}
+.userInfo{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-right: 25px;
+
+}
+.userInfo p{
+    margin-right: 5px;
+}
+.imageContainer{
+    margin-top: 1px;
+}
+.userCoins{
+    display: flex;
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 0.5px solid rgba(114, 113, 113, 0.795);
+    font-weight: 900;
+    font-size: 18px;
+    --shadow-color: 0deg 0% 63%;
+    box-shadow: 
+    0.8px 0.7px 0.8px hsl(var(--shadow-color) / 0.72),
+    1.4px 1.3px 1.4px -1.7px hsl(var(--shadow-color) / 0.54),
+    5.4px 4.9px 5.5px -3.3px hsl(var(--shadow-color) / 0.36),
+    16.3px 14.9px 16.6px -5px hsl(var(--shadow-color) / 0.18);
+}
+.userCoins p{
+    font-weight: 100;
+}
+.username{
+    font-size: 19px;
+    font-weight: 700;
+    text-align: center;
+    padding-right: 10px;
+}
+.userCoins img{
+    height: 80%;
+}
+
+.headerImg{
+    max-width: 100%;
+}
+
+.title{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    top: 420px;
+    text-align: left bottom;
+    margin-left: 160px;
+    margin-bottom: 25px;
+}
+.coinManagement{
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    top: 62px;  
+    right: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(71, 69, 69, 0.842);
+    
+}
+.coinManagement .top{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid gray;
+}
+.coinManagement .top p{
+  margin-left: 15px;
+  font-weight: 700;
+  font-size: 20px;
+}
+.coinManagement .top button{
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+}
+.coinManagement div button:hover{
+    cursor: pointer;
+}
+.coinManagement div button:disabled{
+    cursor: not-allowed;
+}
+.buttonsContainer{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    height: 40%;
+}
+.text{
+    margin-top: 20px;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.buttonsContainer button{
+    width: 70px;
+    margin-bottom: 15px;
+    min-height: 35px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgba(56, 81, 163, 0.753);
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+}
+.buttonsContainer button:hover{
+    background-color: rgb(56, 81, 163);
+    --shadow-color: 0deg 0% 63%;
+    box-shadow: 
+    0.8px 0.7px 0.8px hsl(var(--shadow-color) / 0.72),
+    1.4px 1.3px 1.4px -1.7px hsl(var(--shadow-color) / 0.54),
+    5.4px 4.9px 5.5px -3.3px hsl(var(--shadow-color) / 0.36),
+    16.3px 14.9px 16.6px -5px hsl(var(--shadow-color) / 0.18);
+  
+}
+.buttonsContainer button:first-child{
+    margin-top: 45px;
+}
+.addButton{
+    height: 30px;
+    width: 30px;
+    margin-left: 7px;
+    font-size: 19px;
+    border-radius: 5px;
+    border: none;
+}
+.addButton:hover{
+    cursor: pointer;
+    background-color: rgb(230, 230, 230);
+}
+.spinners{
+    max-height: 20px;
+    max-width: 20px;
+}
+@media(max-width:1320px){
+    .title{
+        top: 320px;
+    }
+}
+@media(max-width:1000px){
+    .title{
+        top: 220px;
+    }
+}
+@media(max-width: 700px){
+    .title{
+        font-size: 20px;
+        top: 120px;
+        left: -100px;
+    }
+}
+@media(max-width:420px){
+    .username{
+        font-size: 13px;
+    }
+}
