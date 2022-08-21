@@ -21,7 +21,7 @@ const Header = () => {
         getUser().then((res) => {
         setUser(res)
         })
-      },[user])
+      },[buying])
 
       const handleAdd = (amount:number) => {
         setBuying(true)
