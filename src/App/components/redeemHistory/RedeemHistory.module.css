@@ -112,7 +112,7 @@ h1{
     
 }
 .product img{
-    height: 50%;
+    height: 40%;
 }
 .date{
     text-align: center;
@@ -131,4 +131,12 @@ h1{
    h1{
     text-align: center;
    }
+}
+@media(max-width:525px){
+    .product{
+        margin: 0;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
 }

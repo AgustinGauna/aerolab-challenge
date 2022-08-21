@@ -40,7 +40,6 @@ const Products = () => {
           </div>
         </div>
         <Product parameter1={parameter1} parameter2={parameter2} />
-      
       <NavLink to={'/history'}><div className={styles.history}><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></div></NavLink>
     </div>
   )
