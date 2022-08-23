@@ -116,7 +116,7 @@
 }
 .redeem p {
     font-size: 20px;
-    color: yellow;
+    color: #000000;
     font-weight: 800;
     text-align: center;
 }
@@ -173,6 +173,9 @@
     color: gray;
     font-weight: 300;
 }
+.spinner{
+   margin-top: 30px;
+}
 .activeButton{
     height: 40px;
     width: 100px;
@@ -180,12 +183,12 @@
     border: none;
     border-radius: 15px;
     color: rgb(255, 255, 255);
-    background-color: rgba(48, 216, 250, 1);
+    background-color: #3030FA;
     margin-right: 10px;
 }
 .activeButton:hover{
     cursor: pointer;
-    background-color: rgba(38, 190, 210, 1)
+    background-color: #3030fac2;
 }
 .unactiveButton{
     height: 40px;

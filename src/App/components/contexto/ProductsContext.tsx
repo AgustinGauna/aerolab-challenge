@@ -8,6 +8,8 @@ export type ProductsContextProps = {
   setUser: React.Dispatch<React.SetStateAction<User>>
   buying: boolean
   setBuying: React.Dispatch<React.SetStateAction<boolean>>
+  loading: boolean,
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
 
 }
 

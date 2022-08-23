@@ -4,24 +4,35 @@ import { redeemHistory } from '../api/api'
 import { Product, User } from '~/App/types/types'
 import moment from "moment";   
 import coin from '../../../assets/icons/coin.svg'
-import InfiniteScroll from 'react-infinite-scroller';
+import PulseLoader from "react-spinners/PulseLoader";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const RedeemHistory = () => {
 
   const [redeemed, setRedeemed] = useState<Product[]>([])
- 
+  const [clicked, setClicked] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(true)
+  const [moreProducts, setMoreProducts] = useState<boolean>(false)
 
   useEffect(()=>{
     redeemHistory().then((res)=>{
-      setRedeemed(res.data.reverse())
-    })
+      setRedeemed(res.data.slice(0,10).reverse())
+    }).finally(()=>setLoading(false))
   },[])
   
+  const loadMore = () => {
+    setMoreProducts(true)
+    redeemHistory().then((res)=>{
+      setRedeemed(res.data.reverse())
+    }).finally(()=>{
+      setClicked(true)
+    })
+  }
 
   return (
     <div className={styles.center}>
       <h1>Your Orders</h1>
-      <div className={styles.container}>{redeemed ? redeemed.map((product,index)=>{
+      <div className={styles.container}>{loading ? <PulseLoader className={styles.spinner} /> : redeemed.map((product,index)=>{
       return(
         <div className={styles.product} key={index} >
             <img className={styles.productImg} src={product.img.url} alt="" />       
@@ -40,7 +51,9 @@ const RedeemHistory = () => {
             </div>
         </div>
       )
-    }): ""}</div>
+    })}</div>
+    {loading ? "" : <button className={clicked ? styles.hide : styles.moreButton} onClick={()=>{loadMore()}}>{moreProducts ? <ClipLoader/> : "Más..."}</button>
+}
     </div>
   )
 }

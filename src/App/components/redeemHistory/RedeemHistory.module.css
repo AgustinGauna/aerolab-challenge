@@ -27,7 +27,9 @@
     5.4px 4.9px 5.5px -3.3px hsl(var(--shadow-color) / 0.36),
     16.3px 14.9px 16.6px -5px hsl(var(--shadow-color) / 0.18);
 }
-
+.product:last-child{
+    margin-bottom: 10px;
+}
 
 .product h4{
     color: gray;
@@ -58,7 +60,29 @@ h1{
     padding-bottom: 15px;
     width: 70%;
 }
+.moreButton{
+    background-color: rgba(48, 216, 250, 1);
+    width: 120px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.moreButton:hover{
+    cursor: pointer;
+    background-color: rgb(48, 169, 250);
 
+}
+.hide{
+    display: none;
+}
+.spinner{
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
 @media(max-width:1000px){
     .productInfo{
         min-width: 110px;

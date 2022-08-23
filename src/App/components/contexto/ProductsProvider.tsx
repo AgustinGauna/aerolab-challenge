@@ -17,11 +17,13 @@ export const ProductsProvider = ({ children } : ChildrenProps) => {
     _id: ""
     })
     const [buying, setBuying] = useState<boolean>(false)
-
+    const [loading, setLoading] = useState<boolean>(true)
     useEffect(()=>{
       
       getAllProducts().then((res)=>{
           dispatch({type:'getProducts', payload: res})
+        }).finally(()=>{
+          setLoading(false)
         })
      
       },[])
@@ -44,7 +46,9 @@ export const ProductsProvider = ({ children } : ChildrenProps) => {
       user,
       setUser,
       buying,
-      setBuying
+      setBuying,
+      loading,
+      setLoading
       }}>
         {children}
     </ProductsContext.Provider>

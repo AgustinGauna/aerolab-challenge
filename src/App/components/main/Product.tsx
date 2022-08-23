@@ -8,10 +8,11 @@ import {Product} from '../../types/types'
 import { redeemProduct } from '../api/api'
 import { ProductsContext } from '../contexto/ProductsContext'
 import ClipLoader from "react-spinners/ClipLoader";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Product: FC<ProductComponent> = ({parameter1, parameter2}) => {
 
-    const { productState, user, buying, setBuying} = useContext(ProductsContext);
+    const { productState, user, buying, setBuying, loading} = useContext(ProductsContext);
     const {products} = productState
     const [dropdown, setDropDown] = useState<null | number>(null);
     
@@ -26,7 +27,9 @@ const Product: FC<ProductComponent> = ({parameter1, parameter2}) => {
       }
   return (
     <div className={styles.container}>
-        {products ? products.slice(parameter1,parameter2).map((product: Product, index:number) => {
+        {loading ?  <div className={styles.spinner}> <PulseLoader/> </div> 
+        :  
+        products.slice(parameter1,parameter2).map((product: Product, index:number) => {
           return (
             <div onMouseEnter={() => handleDropdown(index)} onMouseLeave={() => handleDropdown(index)}  className={styles.producto} key={product._id}>
               {user.points >= product.cost ?   <img className={styles.bagIcon} src={index === dropdown ? buywhite:buyblue} alt="" /> : <div className={styles.error}>You need {product.cost - user.points}<img src={coin} alt="coin" /></div> }
@@ -45,11 +48,10 @@ const Product: FC<ProductComponent> = ({parameter1, parameter2}) => {
               </div>
             </div>     
         )
-        }) : 
-        <div className={styles.spinner}>
-            
-        </div>
+        }) 
+       
         } 
+        
   
       </div>
   )
