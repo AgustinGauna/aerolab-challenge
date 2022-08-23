@@ -59,7 +59,7 @@
     16.3px 14.9px 16.6px -5px hsl(var(--shadow-color) / 0.18);
 }
 .userCoins p{
-    font-weight: 100;
+    font-weight: 600;
 }
 .username{
     font-size: 19px;
