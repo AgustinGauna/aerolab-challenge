@@ -16,7 +16,7 @@ const RedeemHistory = () => {
 
   useEffect(()=>{
     redeemHistory().then((res)=>{
-      setRedeemed(res.data.slice(0,10).reverse())
+      setRedeemed(res.data.reverse().slice(0,10))
     }).finally(()=>setLoading(false))
   },[])
   
