@@ -13,6 +13,7 @@ const RedeemHistory = () => {
   const [clicked, setClicked] = useState<boolean>(false)
   const [loading, setLoading] = useState<boolean>(true)
   const [moreProducts, setMoreProducts] = useState<boolean>(false)
+  const [parameter, setParameter] = useState<number>(20)
 
   useEffect(()=>{
     redeemHistory().then((res)=>{
@@ -21,11 +22,14 @@ const RedeemHistory = () => {
   },[])
   
   const loadMore = () => {
+    console.log("asd")
+    setParameter(parameter + 10)
     setMoreProducts(true)
     redeemHistory().then((res)=>{
-      setRedeemed(res.data.reverse())
+      setRedeemed(res.data.reverse().slice(0,parameter))
     }).finally(()=>{
       setClicked(true)
+      setMoreProducts(false)
     })
   }
 
@@ -52,7 +56,7 @@ const RedeemHistory = () => {
         </div>
       )
     })}</div>
-    {loading ? "" : <button className={clicked ? styles.hide : styles.moreButton} onClick={()=>{loadMore()}}>{moreProducts ? <ClipLoader/> : "Más..."}</button>
+    {loading ? "" : <button disabled={moreProducts === true ? true : false} className={styles.moreButton} onClick={()=>{loadMore()}}>{moreProducts ? <ClipLoader/> : "Más..."}</button>
 }
     </div>
   )
