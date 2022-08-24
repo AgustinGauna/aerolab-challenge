@@ -22,7 +22,6 @@ const RedeemHistory = () => {
   },[])
   
   const loadMore = () => {
-    console.log("asd")
     setParameter(parameter + 10)
     setMoreProducts(true)
     redeemHistory().then((res)=>{
